@@ -21,3 +21,23 @@ def remove_student(gradebook):
 gradebook = {}
 while True:
   # print the menu,read the choice,call the right function
+  print("1.Add a student\n2.Add a mark\n3.View all student\n4.Student summary\n5.Class statistics\n6.Remove a student\n7.Exit")
+  option = input("Enter option: ")
+  if option == '7':
+    break
+  elif option == '1':
+    add_student(gradebook)
+  elif option == '2':
+    add_marks(gradebook)
+  elif option == '3':
+    view_all(gradebook)
+  elif option == '4':
+    student_summary(gradebook)
+  elif option == '5':
+    class_statistics(gradebook)
+  elif option == '6':
+    remove_student(gradebook)
+  else:
+    print("Invalid option")
+  
+  
