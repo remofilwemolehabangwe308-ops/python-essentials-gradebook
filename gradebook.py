@@ -85,7 +85,30 @@ def view_all(gradebook):
       average_mark = sum(gradebook[student_name])/len(gradebook[student_name])
       print(f'Student Name:{student_name}\nMarks:{gradebook[student_name]}\nAverage:{average_marks}')
       
-                             
+   
+def highest_and_lowest(marks):
+      if not marks:
+        print("No marks yet")
+        return None, None
+
+
+      highest = max(marks)
+      lowest = min(marks)
+      return highest, lowest
+
+def student_summary(gradebook):
+  student_name = input("Enter the student name: ")
+  if student_name not in gradebook:
+    print(f'{student_name} does not exist')
+    return
+  marks = gradebook[student_name]
+  number_of_marks = len(marks)
+  highest, lowest = highest_and_lowest(marks)
+  if highest is None and lowest is None:
+    return
+  average_mark = sum(marks)/len(marks)
+  print(f'Student Name: {student_name}\nNumber of marks:{number_of_marks}\nAverage:{average_mark}\nHighest:{highest}\nLowest:{lowest}')
+                          
   
 
 
