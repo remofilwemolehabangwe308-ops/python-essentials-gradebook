@@ -39,5 +39,20 @@ while True:
     remove_student(gradebook)
   else:
     print("Invalid option")
+    
+def add_student(gradebook):
+  student_name = input("Enter the student name: ")
+  while True:
+    if not student_name:
+      print("It is blank the student was not added")
+      return Menu
+    elif student_name in gradebook:
+      print(f'{student_name} already exists')
+      return Menu
+    else:
+      print(f'{student_name} added successfully')
+      gradebook[student_name] = []
+      break 
+      
   
   
