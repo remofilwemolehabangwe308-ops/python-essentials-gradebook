@@ -45,14 +45,37 @@ def add_student(gradebook):
   while True:
     if not student_name:
       print("It is blank the student was not added")
-      return Menu
+      return 
     elif student_name in gradebook:
       print(f'{student_name} already exists')
-      return Menu
+      return 
     else:
       print(f'{student_name} added successfully')
       gradebook[student_name] = []
       break 
+
+def add_mark(gradebook):
+  student_name = input("Enter the student name: ")
+  if student_name not in gradebook:
+    print(f"{student_name} does not exist.")
+    return 
+  else:
+    while True:
+      try:
+        student_mark = float(input("Enter the student mark: "))
+        if student_mark < 0 or student_mark > 100:
+          print("Out of range!!!")
+          return
+        elif student_mark >= 0 and student_mark <= 100:
+          gradebook[student_name].append(student_mark)
+          print(f'Mark {student_mark} added to {student_name}')
+          return
+      except ValueError:
+        print("That is not a number!!")
+                             
+  
+
+
       
   
   
