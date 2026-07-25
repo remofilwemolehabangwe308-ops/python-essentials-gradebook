@@ -72,6 +72,19 @@ def add_mark(gradebook):
           return
       except ValueError:
         print("That is not a number!!")
+
+def view_all(gradebook):
+  if not gradebook:
+    print("No student yet: ")
+    return
+  else:
+    for student_name in gradebook.keys():
+      if not gradebook[student_name]:
+        print(f'Student Name: {student_name}\nMarks: No marks yet\nAverage: n/a')
+      else:
+      average_mark = sum(gradebook[student_name])/len(gradebook[student_name])
+      print(f'Student Name:{student_name}\nMarks:{gradebook[student_name]}\nAverage:{average_marks}')
+      
                              
   
 
