@@ -109,6 +109,41 @@ def student_summary(gradebook):
   average_mark = sum(marks)/len(marks)
   print(f'Student Name: {student_name}\nNumber of marks:{number_of_marks}\nAverage:{average_mark}\nHighest:{highest}\nLowest:{lowest}')
                           
+def class_statistics(gradebook):
+  if not gradebook:
+    print("No student yet")
+    return
+  class_number = len(gradebook)
+  total_marks = 0
+  total_mark_count = 0 
+  passing_list = []
+  failing_list = []
+  top_student = ("")
+  highest_average = 0
+
+  for student_name in gradebook.keys():
+    if not gradebook[student_name]:
+      print(f'{student_name} has no marks yet')
+      continue 
+    average_mark = sum(gradebook[student_name])/len(gradebook[student_name])
+    if average_mark > highest_average:
+      highest_average = average_mark
+      top_student = student_name
+    total_marks += sum(gradebook[student_name])
+    total_mark_count += len(gradebook[student_name])
+    if average_mark >= 50:
+      passing_list.append(student_name)
+    else:
+      failing_list.append(student_name)
+        
+  if total_mark_count == 0:
+    print("No marks yet")
+    return
+  class_avarage = total_marks/total_mark_count
+  print(f'Total number of student:{class_number}\nClass Average:{class_avarage}\nTop Student:{top_student}\nHighest Average:{highest_average}\nPassing List:{passing_list}\nFailing List:{failing_list}')
+
+    
+        
   
 
 
