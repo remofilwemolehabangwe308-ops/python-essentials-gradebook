@@ -142,7 +142,18 @@ def class_statistics(gradebook):
   class_avarage = total_marks/total_mark_count
   print(f'Total number of student:{class_number}\nClass Average:{class_avarage}\nTop Student:{top_student}\nHighest Average:{highest_average}\nPassing List:{passing_list}\nFailing List:{failing_list}')
 
-    
+ def remove_student(gradebook):
+  student_name = input("Enter the student name: ")
+  if student_name not in gradebook:
+    print(f'{student_name} not found')
+    return
+  else:
+    confirmation = input(f'Are you sure you want to remove {student_name}? (y/n)')
+    if confirmation == "y":
+      del gradebook[student_name]
+      print(f'{student_name} is removed')
+    else:
+     print(f'{student_name} is not removed')   
         
   
 
