@@ -107,11 +107,11 @@ def class_statictics(gradebook):
       passing_list.append(student_name)
     else:
       failing_list.append(student_name)
- if total_mark_count == 0:
+  if total_mark_count == 0:
    print("No marks yet")
    return
- class_average = total_marks/total_mark_count
- print(f'Total number of student:{class_number}\nClass Average:{class_average}\nTop Student:{top_student}\nHighest Average:{highest_average}\nPassing List:{passing_list}\nFailing List:{failing_list}')
+  class_average = total_marks/total_mark_count
+  print(f'Total number of student:{class_number}\nClass Average:{class_average}\nTop Student:{top_student}\nHighest Average:{highest_average}\nPassing List:{passing_list}\nFailing List:{failing_list}')
 
 # Removes a student after y/n confirmation
 def remove_student(gradebook):
@@ -138,7 +138,7 @@ while True:
   elif option == '1':
     add_student(gradebook)
   elif option == '2':
-    add_marks(gradebook)
+    add_mark(gradebook)
   elif option == '3':
     view_all(gradebook)
   elif option == '4':
